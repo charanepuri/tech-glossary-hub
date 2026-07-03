@@ -28,6 +28,143 @@ h1,h2,h3,h4,h5,h6{
     color:var(--primary);
 }
 
+.hero{
+    padding:100px 0;
+    background:linear-gradient(135deg,#2563EB,#06B6D4);
+    color:white;
+}
+
+.hero h1{
+    font-size:3.2rem;
+    font-weight:800;
+}
+
+.hero span{
+    display:block;
+}
+
+.hero p{
+    max-width:750px;
+    margin:25px auto;
+    font-size:1.15rem;
+}
+
+.stats{
+    padding:70px 0;
+}
+
+.stats h2{
+    color:#2563EB;
+    font-size:3rem;
+}
+
+.category-card{
+
+    transition:.3s;
+    border:none;
+    border-radius:15px;
+}
+
+.category-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+.glossary-card{
+
+    transition:.3s;
+    border:none;
+    border-radius:18px;
+    
+
+}
+
+.glossary-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+
+}
+
+.glossary-card a{
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    color:#2563EB;
+
+    cursor:pointer;
+
+}
+
+.cta{
+
+    background:#2563EB;
+
+    color:white;
+
+    padding:80px 0;
+
+}
+
+.category-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.category-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+}
+
+.category-card h4{
+
+    font-weight:700;
+
+}
+
+.category-card small{
+
+    font-weight:600;
+
+    color:#2563EB;
+
+}
+
 .footer{
     background:#0f172a;
     color:white;
