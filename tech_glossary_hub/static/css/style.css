@@ -1,0 +1,43 @@
+:root{
+    --primary:#2563EB;
+    --secondary:#1E293B;
+    --accent:#06B6D4;
+    --background:#F8FAFC;
+    --card:#FFFFFF;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--background);
+    color:#333;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family:'Poppins',sans-serif;
+}
+
+.navbar-brand{
+    color:var(--primary);
+}
+
+.nav-link{
+    font-weight:500;
+}
+
+.nav-link:hover{
+    color:var(--primary);
+}
+
+.footer{
+    background:#0f172a;
+    color:white;
+}
+
+.footer a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+.footer a:hover{
+    color:white;
+}
