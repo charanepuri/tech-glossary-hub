@@ -1,0 +1,97 @@
+{% extends "glossary/base.html" %}
+
+{% block title %}
+{{ category.name }}
+{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+<a
+href="{% url 'category_list' %}"
+class="btn btn-outline-secondary mb-4">
+
+← Back to Categories
+
+</a>
+
+<div class="mb-5">
+
+<h1>
+
+{{ category.name }}
+
+</h1>
+
+<p class="lead">
+
+{{ category.description }}
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+{% for term in terms %}
+
+<div class="col-lg-4">
+
+<div class="card glossary-card h-100">
+
+<div class="card-body">
+
+<span class="badge bg-success">
+
+{{ term.difficulty }}
+
+</span>
+
+<h4 class="mt-3">
+
+{{ term.title }}
+
+</h4>
+
+<p>
+
+{{ term.definition|truncatewords:20 }}
+
+</p>
+
+<a href="#">
+
+Read More →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% empty %}
+
+<div class="col-12">
+
+<div class="alert alert-warning">
+
+No glossary terms found.
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'glossary/base.html' %}
+{% extends "glossary/base.html" %}
 
 {% block title %}
 Tech Glossary Hub
@@ -6,146 +6,77 @@ Tech Glossary Hub
 
 {% block content %}
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="hero">
-
     <div class="container text-center">
-
         <h1>
             Learn Tech Concepts
             <span>One Definition at a Time.</span>
         </h1>
 
         <p>
-            Explore programming, Python, Django, JavaScript,
-            React, Databases and DevOps with easy-to-understand
-            explanations and practical examples.
+            Explore Programming, Python, Django, JavaScript, React,
+            Database, and DevOps concepts with simple definitions,
+            detailed explanations, and practical examples.
         </p>
 
-<div class="mt-5">
+        <div class="mt-5">
+            <a href="{% url 'glossary_list' %}" class="btn btn-light btn-lg me-3">
+                Explore Glossary
+            </a>
 
-<a href="#"
-
-class="btn btn-light btn-lg me-3">
-
-Explore Glossary
-
-</a>
-
-<a href="#"
-
-class="btn btn-outline-light btn-lg">
-
-Browse Categories
-
-</a>
-
-</div>
-
+            <a href="{% url 'category_list' %}" class="btn btn-light btn-lg me-3">
+                Browse Categories
+            </a>
+        </div>
     </div>
-
 </section>
 
-<!-- Statistics -->
+<!-- Statistics Section -->
+<section class="stats py-5">
+    <div class="container">
+        <div class="row g-4 text-center">
 
-<section class="stats">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <h1>{{ total_terms }}+</h1>
+                        <p class="mb-0">Glossary Terms</p>
+                    </div>
+                </div>
+            </div>
 
-<div class="container">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <h1>{{ total_categories }}</h1>
+                        <p class="mb-0">Categories</p>
+                    </div>
+                </div>
+            </div>
 
-<div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <h1>{{ difficulty_levels }}</h1>
+                        <p class="mb-0">Difficulty Levels</p>
+                    </div>
+                </div>
+            </div>
 
-<div class="col-md-4">
-
-<div class="card shadow-sm border-0">
-
-<div class="card-body">
-
-<h1>
-
-{{ total_terms }}+
-
-</h1>
-
-<p>
-
-Glossary Terms
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card shadow-sm border-0">
-
-<div class="card-body">
-
-<h1>
-
-{{ total_categories }}
-
-</h1>
-
-<p>
-
-Categories
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card shadow-sm border-0">
-
-<div class="card-body">
-
-<h1>
-
-{{ difficulty_levels }}
-
-</h1>
-
-<p>
-
-Difficulty Levels
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+        </div>
+    </div>
 </section>
 
-<!-- Categories -->
-
+<!-- Featured Categories -->
 <section class="py-5">
-
     <div class="container">
 
         <div class="text-center mb-5">
-
             <h2 class="fw-bold">Featured Categories</h2>
-
             <p class="text-muted">
-                Explore technical concepts organized by category.
+                Explore technical concepts organized into different categories.
             </p>
-
         </div>
 
         <div class="row g-4">
@@ -167,15 +98,11 @@ Difficulty Levels
                         </div>
 
                         <h4 class="mt-4">
-
                             {{ category.name }}
-
                         </h4>
 
                         <p class="text-muted">
-
                             {{ category.description|truncatewords:20 }}
-
                         </p>
 
                         <div class="d-flex justify-content-between align-items-center mt-4">
@@ -183,16 +110,14 @@ Difficulty Levels
                             <span
                                 class="badge"
                                 style="background: {{ category.color }};">
-
                                 {{ category.terms.count }} Terms
-
                             </span>
 
-                            <small>
-
-                                Learn →
-
-                            </small>
+                            <a
+                                href="{% url 'category_detail' category.slug %}"
+                                class="btn btn-sm btn-outline-primary">
+                                Explore
+                            </a>
 
                         </div>
 
@@ -202,110 +127,105 @@ Difficulty Levels
 
             </div>
 
+            {% empty %}
+
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    No categories available.
+                </div>
+            </div>
+
             {% endfor %}
 
         </div>
 
     </div>
-
 </section>
 
-<!-- Latest Terms -->
-
+<!-- Latest Glossary Terms -->
 <section class="py-5 bg-light">
+    <div class="container">
 
-<div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Latest Glossary Terms</h2>
+            <p class="text-muted">
+                Discover recently added programming concepts.
+            </p>
+        </div>
 
-<h2 class="mb-4">
+        <div class="row g-4">
 
-Latest Glossary Terms
+            {% for term in latest_terms %}
 
-</h2>
+            <div class="col-lg-4 col-md-6">
 
-<div class="row g-4">
+                <div class="card glossary-card h-100">
 
-{% for term in latest_terms %}
+                    <div class="card-body">
 
-<div class="col-lg-4">
+                        <div class="d-flex justify-content-between mb-3">
 
-<div class="card glossary-card h-100">
+                            <span class="badge bg-success">
+                                {{ term.difficulty }}
+                            </span>
 
-<div class="card-body">
+                            <span class="text-muted small">
+                                {{ term.category.name }}
+                            </span>
 
-<div class="d-flex justify-content-between">
+                        </div>
 
-<span class="badge bg-success">
+                        <h4>{{ term.title }}</h4>
 
-{{ term.difficulty }}
+                        <p>
+                            {{ term.definition|truncatewords:20 }}
+                        </p>
 
-</span>
+                        <a
+                            href="{% url 'glossary_detail' term.slug %}"
+                            class="btn btn-outline-primary btn-sm">
+                            Read More
+                        </a>
 
-<span class="text-muted">
+                    </div>
 
-{{ term.category.name }}
+                </div>
 
-</span>
+            </div>
 
-</div>
+            {% empty %}
 
-<h4 class="mt-3">
+            <div class="col-12">
+                <div class="alert alert-info text-center">
+                    No glossary terms available.
+                </div>
+            </div>
 
-{{ term.title }}
+            {% endfor %}
 
-</h4>
+        </div>
 
-<p>
-
-{{ term.definition|truncatewords:22 }}
-
-</p>
-
-<a href="#">
-
-Read More →
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-{% endfor %}
-
-</div>
-
-</div>
-
+    </div>
 </section>
 
-<!-- CTA -->
-
+<!-- Call To Action -->
 <section class="cta">
+    <div class="container text-center">
 
-<div class="container text-center">
+        <h2>
+            Ready to Improve Your Technical Vocabulary?
+        </h2>
 
-<h2>
+        <p class="mb-4">
+            Explore over {{ total_terms }} programming terms across
+            {{ total_categories }} categories and strengthen your development knowledge.
+        </p>
 
-Ready to improve your technical vocabulary?
+        <a href="{% url 'glossary_list' %}" class="btn btn-light btn-lg">
+            Browse Glossary
+        </a>
 
-</h2>
-
-<p>
-
-Start exploring 45+ programming terms today.
-
-</p>
-
-<a href="#" class="btn btn-light">
-
-Browse Glossary
-
-</a>
-
-</div>
-
+    </div>
 </section>
 
 {% endblock %}

@@ -1,0 +1,85 @@
+{% extends "glossary/base.html" %}
+
+{% block title %}
+{{ term.title }}
+{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+
+<div class="container">
+
+<a
+href="{% url 'glossary_list' %}"
+class="btn btn-outline-secondary mb-4">
+
+← Back to Glossary
+
+</a>
+
+<div class="card shadow-sm border-0">
+
+<div class="card-body p-5">
+
+<div class="mb-4">
+
+<span class="badge bg-primary">
+
+{{ term.category.name }}
+
+</span>
+
+<span class="badge bg-success">
+
+{{ term.difficulty }}
+
+</span>
+
+</div>
+
+<h1>
+
+{{ term.title }}
+
+</h1>
+
+<hr>
+
+<h4>Definition</h4>
+
+<p>
+
+{{ term.definition }}
+
+</p>
+
+<h4 class="mt-4">
+
+Explanation
+
+</h4>
+
+<p>
+
+{{ term.explanation }}
+
+</p>
+
+<h4 class="mt-4">
+
+Example
+
+</h4>
+
+<pre class="bg-light p-3 rounded"><code>{{ term.example }}</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}
