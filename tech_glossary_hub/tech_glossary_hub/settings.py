@@ -22,11 +22,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 # ==========================================================
 
-SECRET_KEY = "django-insecure-gy_k1uplapb2op7fvbv%9-wpvdd&w#mb0#22zjcizt^e3u*7yw"
+import os
+from pathlib import Path
 
-DEBUG = True
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-gy_k1uplapb2op7fvbv%9-wpvdd&w#mb0#22zjcizt^e3u*7yw",
+)
 
-ALLOWED_HOSTS = []
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".onrender.com",
+]
 
 # ==========================================================
 # APPLICATIONS
@@ -63,7 +73,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
 
     # Uncomment before deployment
-    # "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 
     "django.contrib.sessions.middleware.SessionMiddleware",
 
@@ -187,6 +197,11 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+STATICFILES_STORAGE = (
+    "whitenoise.storage.CompressedManifestStaticFilesStorage"
+)
 
 # ==========================================================
 # MEDIA FILES
