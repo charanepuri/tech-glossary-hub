@@ -8,7 +8,9 @@ Tech Glossary Hub
 
 <!-- Hero Section -->
 <section class="hero">
+
     <div class="container text-center">
+
         <h1>
             Learn Tech Concepts
             <span>One Definition at a Time.</span>
@@ -20,63 +22,122 @@ Tech Glossary Hub
             detailed explanations, and practical examples.
         </p>
 
-        <div class="mt-5">
-            <a href="{% url 'glossary_list' %}" class="btn btn-light btn-lg me-3">
+        <div class="mt-4">
+
+            <a
+                href="{% url 'glossary_list' %}"
+                class="btn btn-light btn-lg me-3">
+
                 Explore Glossary
+
             </a>
 
-            <a href="{% url 'category_list' %}" class="btn btn-light btn-lg me-3">
+            <a
+                href="{% url 'category_list' %}"
+                class="btn btn-outline-light btn-lg">
+
                 Browse Categories
+
             </a>
+
         </div>
+
     </div>
+
 </section>
 
 <!-- Statistics Section -->
-<section class="stats py-5">
+<section class="stats">
+
     <div class="container">
+
         <div class="row g-4 text-center">
 
-            <div class="col-md-4">
-                <div class="card shadow-sm border-0 h-100">
+            <div class="col-md-3">
+
+                <div class="card h-100">
+
                     <div class="card-body">
-                        <h1>{{ total_terms }}+</h1>
-                        <p class="mb-0">Glossary Terms</p>
+
+                        <h1>{{ total_terms }}</h1>
+
+                        <p>Total Terms</p>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <div class="col-md-4">
-                <div class="card shadow-sm border-0 h-100">
+            <div class="col-md-3">
+
+                <div class="card h-100">
+
                     <div class="card-body">
+
                         <h1>{{ total_categories }}</h1>
-                        <p class="mb-0">Categories</p>
+
+                        <p>Categories</p>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <div class="col-md-4">
-                <div class="card shadow-sm border-0 h-100">
+            <div class="col-md-3">
+
+                <div class="card h-100">
+
                     <div class="card-body">
-                        <h1>{{ difficulty_levels }}</h1>
-                        <p class="mb-0">Difficulty Levels</p>
+
+                        <h1>{{ featured_count }}</h1>
+
+                        <p>Featured Terms</p>
+
                     </div>
+
                 </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <h1>{{ beginner_count }}</h1>
+
+                        <p>Beginner Friendly</p>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 <!-- Featured Categories -->
 <section class="py-5">
+
     <div class="container">
 
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Featured Categories</h2>
+
+            <h2 class="fw-bold">
+                Featured Categories
+            </h2>
+
             <p class="text-muted">
                 Explore technical concepts organized into different categories.
             </p>
+
         </div>
 
         <div class="row g-4">
@@ -110,13 +171,17 @@ Tech Glossary Hub
                             <span
                                 class="badge"
                                 style="background: {{ category.color }};">
+
                                 {{ category.terms.count }} Terms
+
                             </span>
 
                             <a
                                 href="{% url 'category_detail' category.slug %}"
                                 class="btn btn-sm btn-outline-primary">
+
                                 Explore
+
                             </a>
 
                         </div>
@@ -130,9 +195,13 @@ Tech Glossary Hub
             {% empty %}
 
             <div class="col-12">
+
                 <div class="alert alert-info text-center">
+
                     No categories available.
+
                 </div>
+
             </div>
 
             {% endfor %}
@@ -140,17 +209,197 @@ Tech Glossary Hub
         </div>
 
     </div>
+
+</section>
+
+
+<!-- Learning Journey -->
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2>
+                Start Your Learning Journey
+            </h2>
+
+            <p class="text-muted">
+                Master programming concepts one term at a time.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-search display-4 text-primary"></i>
+
+                        <h4 class="mt-3">
+                            Discover
+                        </h4>
+
+                        <p>
+                            Search programming concepts across multiple technologies.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-journal-code display-4 text-success"></i>
+
+                        <h4 class="mt-3">
+                            Learn
+                        </h4>
+
+                        <p>
+                            Understand technical concepts through detailed explanations and examples.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-lightbulb display-4 text-warning"></i>
+
+                        <h4 class="mt-3">
+                            Apply
+                        </h4>
+
+                        <p>
+                            Build confidence by learning practical programming concepts.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Featured Terms -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Featured Terms
+            </h2>
+
+            <p class="text-muted">
+                Explore some of the most important programming concepts selected for learners.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            {% for term in featured_terms %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card glossary-card h-100">
+
+                    <div class="card-body">
+
+                        <div class="d-flex justify-content-between mb-3">
+
+                            <span class="badge bg-success">
+                                {{ term.difficulty }}
+                            </span>
+
+                            <span class="text-muted small">
+                                {{ term.category.name }}
+                            </span>
+
+                        </div>
+
+                        <h4>
+                            {{ term.title }}
+                        </h4>
+
+                        <p>
+                            {{ term.definition|truncatewords:20 }}
+                        </p>
+
+                        <a
+                            href="{% url 'glossary_detail' term.slug %}"
+                            class="btn btn-outline-primary btn-sm">
+
+                            Read More
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="col-12">
+
+                <div class="alert alert-info text-center">
+
+                    No featured terms available.
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- Latest Glossary Terms -->
 <section class="py-5 bg-light">
+
     <div class="container">
 
         <div class="text-center mb-5">
-            <h2 class="fw-bold">Latest Glossary Terms</h2>
+
+            <h2 class="fw-bold">
+                Latest Glossary Terms
+            </h2>
+
             <p class="text-muted">
                 Discover recently added programming concepts.
             </p>
+
         </div>
 
         <div class="row g-4">
@@ -175,7 +424,9 @@ Tech Glossary Hub
 
                         </div>
 
-                        <h4>{{ term.title }}</h4>
+                        <h4>
+                            {{ term.title }}
+                        </h4>
 
                         <p>
                             {{ term.definition|truncatewords:20 }}
@@ -184,7 +435,9 @@ Tech Glossary Hub
                         <a
                             href="{% url 'glossary_detail' term.slug %}"
                             class="btn btn-outline-primary btn-sm">
+
                             Read More
+
                         </a>
 
                     </div>
@@ -196,9 +449,13 @@ Tech Glossary Hub
             {% empty %}
 
             <div class="col-12">
+
                 <div class="alert alert-info text-center">
+
                     No glossary terms available.
+
                 </div>
+
             </div>
 
             {% endfor %}
@@ -206,26 +463,97 @@ Tech Glossary Hub
         </div>
 
     </div>
+
+</section>
+
+<!-- Why Tech Glossary Hub -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <h2 class="fw-bold">
+                    Why Tech Glossary Hub?
+                </h2>
+
+                <p class="text-muted">
+                    Learning programming becomes easier when concepts are organized,
+                    connected, and explained with practical examples.
+                </p>
+
+                <p class="text-muted">
+                    Our goal is to provide a simple, beginner-friendly platform
+                    where students and developers can quickly understand technical
+                    terminology and strengthen their programming knowledge.
+                </p>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <ul class="list-group shadow-sm">
+
+                    <li class="list-group-item">
+                        ✅ Organized Categories
+                    </li>
+
+                    <li class="list-group-item">
+                        ✅ Beginner-Friendly Definitions
+                    </li>
+
+                    <li class="list-group-item">
+                        ✅ Detailed Explanations
+                    </li>
+
+                    <li class="list-group-item">
+                        ✅ Practical Examples
+                    </li>
+
+                    <li class="list-group-item">
+                        ✅ Difficulty Levels
+                    </li>
+
+                    <li class="list-group-item">
+                        ✅ Related Terms
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!-- Call To Action -->
 <section class="cta">
+
     <div class="container text-center">
 
         <h2>
-            Ready to Improve Your Technical Vocabulary?
+            Ready to Learn Something New?
         </h2>
 
-        <p class="mb-4">
-            Explore over {{ total_terms }} programming terms across
-            {{ total_categories }} categories and strengthen your development knowledge.
+        <p>
+            Explore programming concepts, improve your technical vocabulary,
+            and become a better developer.
         </p>
 
-        <a href="{% url 'glossary_list' %}" class="btn btn-light btn-lg">
-            Browse Glossary
+        <a
+            href="{% url 'glossary_list' %}"
+            class="btn btn-light btn-lg">
+
+            Start Learning
+
         </a>
 
     </div>
+
 </section>
 
 {% endblock %}

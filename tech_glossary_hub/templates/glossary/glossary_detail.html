@@ -1,28 +1,66 @@
 {% extends "glossary/base.html" %}
 
 {% block title %}
-{{ term.title }}
+{{ term.title }} | Tech Glossary Hub
 {% endblock %}
 
 {% block content %}
+
+<!-- Breadcrumb -->
+
+<section class="bg-light py-3 border-bottom">
+
+<div class="container">
+
+<nav aria-label="breadcrumb">
+
+<ol class="breadcrumb mb-0">
+
+<li class="breadcrumb-item">
+
+<a href="{% url 'home' %}">Home</a>
+
+</li>
+
+<li class="breadcrumb-item">
+
+<a href="{% url 'glossary_list' %}">
+
+Glossary
+
+</a>
+
+</li>
+
+<li class="breadcrumb-item active">
+
+{{ term.title }}
+
+</li>
+
+</ol>
+
+</nav>
+
+</div>
+
+</section>
 
 <section class="py-5">
 
 <div class="container">
 
-<a
-href="{% url 'glossary_list' %}"
-class="btn btn-outline-secondary mb-4">
+<div class="row g-5">
 
-← Back to Glossary
+<!-- Main Content -->
 
-</a>
+<div class="col-lg-8">
 
-<div class="card shadow-sm border-0">
+<div class="card shadow-sm border-0 rounded-4">
 
 <div class="card-body p-5">
 
-<div class="mb-4">
+<div class="d-flex justify-content-between align-items-center mb-4">
 
 <span class="badge bg-primary">
 
@@ -30,7 +68,7 @@ class="btn btn-outline-secondary mb-4">
 
 </span>
 
-<span class="badge bg-success">
+<span class="badge bg-secondary">
 
 {{ term.difficulty }}
 
@@ -38,15 +76,17 @@ class="btn btn-outline-secondary mb-4">
 
 </div>
 
-<h1>
+<h1 class="mb-4">
 
 {{ term.title }}
 
 </h1>
 
-<hr>
+<h5>
 
-<h4>Definition</h4>
+Definition
+
+</h5>
 
 <p>
 
@@ -54,11 +94,13 @@ class="btn btn-outline-secondary mb-4">
 
 </p>
 
-<h4 class="mt-4">
+<hr>
+
+<h5>
 
 Explanation
 
-</h4>
+</h5>
 
 <p>
 
@@ -66,13 +108,167 @@ Explanation
 
 </p>
 
-<h4 class="mt-4">
+<hr>
+
+<h5>
 
 Example
 
-</h4>
+</h5>
 
-<pre class="bg-light p-3 rounded"><code>{{ term.example }}</code></pre>
+<div class="alert alert-light border">
+
+{{ term.example }}
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Previous / Next -->
+
+<div class="d-flex justify-content-between mt-4">
+
+<div>
+
+{% if previous_term %}
+
+<a
+href="{% url 'glossary_detail' previous_term.slug %}"
+class="btn btn-outline-primary"
+>
+
+← {{ previous_term.title }}
+
+</a>
+
+{% endif %}
+
+</div>
+
+<div>
+
+{% if next_term %}
+
+<a
+href="{% url 'glossary_detail' next_term.slug %}"
+class="btn btn-outline-primary"
+>
+
+{{ next_term.title }} →
+
+</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Sidebar -->
+
+<div class="col-lg-4">
+
+<!-- Related -->
+
+<div class="card border-0 shadow-sm rounded-4 mb-4">
+
+<div class="card-body">
+
+<h5 class="mb-3">
+
+Related Terms
+
+</h5>
+
+{% for item in related_terms %}
+
+<a
+href="{% url 'glossary_detail' item.slug %}"
+class="d-block mb-3 text-decoration-none"
+>
+
+<strong>
+
+{{ item.title }}
+
+</strong>
+
+<br>
+
+<small class="text-muted">
+
+{{ item.definition|truncatewords:10 }}
+
+</small>
+
+</a>
+
+{% empty %}
+
+<p class="text-muted">
+
+No related terms available.
+
+</p>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<!-- Featured -->
+
+<div class="card border-0 shadow-sm rounded-4">
+
+<div class="card-body">
+
+<h5 class="mb-3">
+
+You May Also Like
+
+</h5>
+
+{% for item in featured_terms %}
+
+<a
+href="{% url 'glossary_detail' item.slug %}"
+class="d-block mb-3 text-decoration-none"
+>
+
+<strong>
+
+{{ item.title }}
+
+</strong>
+
+<br>
+
+<small class="text-muted">
+
+{{ item.category.name }}
+
+</small>
+
+</a>
+
+{% empty %}
+
+<p class="text-muted">
+
+No featured terms available.
+
+</p>
+
+{% endfor %}
+
+</div>
+
+</div>
 
 </div>
 

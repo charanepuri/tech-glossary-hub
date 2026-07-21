@@ -1,105 +1,142 @@
 {% extends "glossary/base.html" %}
 
 {% block title %}
-Categories
+Categories | Tech Glossary Hub
 {% endblock %}
 
 {% block content %}
 
+<!-- Page Header -->
+<section class="bg-light py-5 border-bottom">
+
+    <div class="container text-center">
+
+        <h1 class="fw-bold">
+            Browse Categories
+        </h1>
+
+        <p class="text-muted mb-3">
+            Explore programming concepts organized by technology and topic.
+        </p>
+
+        <nav aria-label="breadcrumb">
+
+            <ol class="breadcrumb justify-content-center mb-0">
+
+                <li class="breadcrumb-item">
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+
+                <li class="breadcrumb-item active" aria-current="page">
+                    Categories
+                </li>
+
+            </ol>
+
+        </nav>
+
+    </div>
+
+</section>
+
+<!-- Categories -->
 <section class="py-5">
 
-<div class="container">
+    <div class="container">
 
-<div class="text-center mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
 
-<h1>
+            <h2 class="section-title mb-0">
+                All Categories
+            </h2>
 
-Browse Categories
+            <span class="badge bg-primary">
+                {{ categories|length }} Categories
+            </span>
 
-</h1>
+        </div>
 
-<p class="text-muted">
+        {% if categories %}
 
-Choose a category to explore technical concepts.
+        <div class="row g-4">
 
-</p>
+            {% for category in categories %}
 
-</div>
+            <div class="col-lg-4 col-md-6">
 
-<div class="row g-4">
+                <div class="card category-card h-100">
 
-{% for category in categories %}
+                    <div class="card-body">
 
-<div class="col-lg-4 col-md-6">
+                        <div
+                            class="category-icon"
+                            style="background: {{ category.color }}20; color: {{ category.color }};">
 
-<div class="card category-card h-100">
+                            <i class="bi {{ category.icon }}"></i>
 
-<div class="card-body">
+                        </div>
 
-<div
-class="category-icon"
-style="background:{{ category.color }}20;
-color:{{ category.color }};">
+                        <h3 class="mt-4">
+                            {{ category.name }}
+                        </h3>
 
-<i class="bi {{ category.icon }}"></i>
+                        <p class="text-muted">
+                            {{ category.description|truncatewords:20 }}
+                        </p>
 
-</div>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
 
-<h3 class="mt-4">
+                            <span
+                                class="badge"
+                                style="background: {{ category.color }};">
 
-{{ category.name }}
+                                {{ category.terms.count }} Terms
 
-</h3>
+                            </span>
 
-<p>
+                            <a
+                                href="{% url 'category_detail' category.slug %}"
+                                class="btn btn-outline-primary btn-sm">
 
-{{ category.description }}
+                                View Terms
 
-</p>
+                            </a>
 
-<div class="d-flex justify-content-between align-items-center">
+                        </div>
 
-<span
-class="badge"
-style="background:{{ category.color }};">
+                    </div>
 
-{{ category.terms.count }} Terms
+                </div>
 
-</span>
+            </div>
 
-<a
-href="{% url 'category_detail' category.slug %}"
-class="btn btn-sm btn-outline-primary">
+            {% endfor %}
 
-View Terms
+        </div>
 
-</a>
+        {% else %}
 
-</div>
+        <div class="empty-state text-center py-5">
 
-</div>
+            <i class="bi bi-folder-x display-2 text-secondary"></i>
 
-</div>
+            <h3 class="mt-3">
+                No Categories Available
+            </h3>
 
-</div>
+            <p class="text-muted">
+                Categories will appear here once they have been added.
+            </p>
 
-{% empty %}
+            <a href="{% url 'home' %}" class="btn btn-primary">
+                Back to Home
+            </a>
 
-<div class="col-12">
+        </div>
 
-<div class="alert alert-info">
+        {% endif %}
 
-No categories available.
-
-</div>
-
-</div>
-
-{% endfor %}
-
-</div>
-
-</div>
+    </div>
 
 </section>
 

@@ -1,35 +1,68 @@
 # 📚 Tech Glossary Hub
 
-A modern **Django-powered web application** that helps students, beginners, and developers understand technical concepts through simple definitions, detailed explanations, practical examples, and organized learning categories.
+![Django](https://img.shields.io/badge/Django-6.x-092E20?logo=django&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap&logoColor=white)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-Whether you're learning Programming, Python, Django, JavaScript, React, Databases, or DevOps, Tech Glossary Hub provides an easy-to-navigate platform for exploring essential technical terminology.
+A modern **Django-powered web application** that helps students,
+beginners, and developers understand technical concepts through simple
+definitions, detailed explanations, practical examples, and organized
+learning categories.
+
+---
+
+## 📑 Table of Contents
+
+- Introduction
+- Live Demo
+- Features
+- Categories
+- Project Structure
+- Tech Stack
+- Database Design
+- Installation
+- Project Highlights
+- Skills Demonstrated
+- Future Enhancements
+- Project Status
+- Contributing
+- Support
+- Author
+- License
 
 ---
 
 ## 🚀 Live Demo
 
-**Coming Soon**
+**Render:**
+
+**GitHub Repository:** https://github.com/charanepuri/tech-glossary-hub
 
 ---
 
-# ✨ Features
+## ✨ Features
 
 - 📚 45+ Technical Glossary Terms
 - 📂 7 Learning Categories
-- 🔍 Organized Learning Experience
+- 🔍 Search Functionality
 - 📖 Beginner-Friendly Definitions
 - 💡 Detailed Explanations
-- 💻 Practical Code Examples
+- 💻 Practical Examples
 - 🎯 Difficulty Levels
 - ⭐ Featured Glossary Terms
+- 🔗 Related Terms
+- 📄 Pagination
 - 📱 Fully Responsive Design
-- ⚡ Dynamic Content with Django ORM
-- 🛠 Custom Django Admin Panel
-- 🎨 Modern Bootstrap UI
+- ⚡ Django ORM
+- 🛠 Custom Django Admin
+- 🌐 REST API
+- 🎨 Bootstrap 5 UI
 
 ---
 
-# 📂 Categories
+## 📂 Categories
 
 - Programming
 - Python
@@ -41,37 +74,21 @@ Whether you're learning Programming, Python, Django, JavaScript, React, Database
 
 ---
 
-# 🏗 Project Structure
+## 🏗 Project Structure
 
 ```text
 tech_glossary_hub/
-│
 ├── glossary/
 │   ├── migrations/
 │   ├── static/
-│   │   └── glossary/
-│   │       ├── css/
-│   │       ├── js/
-│   │       └── images/
-│   │
 │   ├── templates/
-│   │   └── glossary/
-│   │       ├── partials/
-│   │       ├── about.html
-│   │       ├── base.html
-│   │       ├── home.html
-│   │       ├── category_list.html
-│   │       ├── category_detail.html
-│   │       ├── glossary_list.html
-│   │       └── glossary_detail.html
-│   │
 │   ├── admin.py
+│   ├── api_urls.py
+│   ├── api_views.py
 │   ├── models.py
+│   ├── serializers.py
 │   ├── urls.py
 │   └── views.py
-│
-├── media/
-├── static/
 ├── tech_glossary_hub/
 ├── manage.py
 ├── requirements.txt
@@ -80,7 +97,7 @@ tech_glossary_hub/
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 ### Frontend
 
@@ -99,7 +116,7 @@ tech_glossary_hub/
 
 - SQLite
 
-### Development Tools
+### Tools
 
 - Git
 - GitHub
@@ -107,96 +124,51 @@ tech_glossary_hub/
 
 ---
 
-# 🗄 Database Design
+## 🗄 Database Design
 
-## Category Model
+### Category
 
-| Field       | Type          |
-| ----------- | ------------- |
-| Name        | CharField     |
-| Slug        | SlugField     |
-| Description | TextField     |
-| Icon        | CharField     |
-| Color       | CharField     |
-| Created At  | DateTimeField |
-| Updated At  | DateTimeField |
+- Name
+- Slug
+- Description
+- Icon
+- Color
+- Created At
+- Updated At
 
----
+### GlossaryTerm
 
-## GlossaryTerm Model
-
-| Field       | Type          |
-| ----------- | ------------- |
-| Category    | ForeignKey    |
-| Title       | CharField     |
-| Slug        | SlugField     |
-| Definition  | TextField     |
-| Explanation | TextField     |
-| Example     | TextField     |
-| Difficulty  | CharField     |
-| Is Featured | BooleanField  |
-| Created At  | DateTimeField |
-| Updated At  | DateTimeField |
+- Category
+- Title
+- Slug
+- Definition
+- Explanation
+- Example
+- Difficulty
+- Featured
+- Created At
+- Updated At
 
 ---
 
-# ⚙️ Installation
-
-## Clone the Repository
+## ⚙️ Installation
 
 ```bash
 git clone https://github.com/charanepuri/tech-glossary-hub.git
-```
-
-```bash
 cd tech-glossary-hub
-```
 
----
-
-## Create Virtual Environment
-
-### Windows
-
-```bash
 python -m venv venv
-```
 
-Activate the environment:
-
-```bash
+# Windows
 venv\Scripts\activate
-```
 
----
-
-## Install Dependencies
-
-```bash
 pip install -r requirements.txt
-```
 
----
-
-## Apply Migrations
-
-```bash
+python manage.py makemigrations
 python manage.py migrate
-```
 
----
-
-## Create Superuser (Optional)
-
-```bash
 python manage.py createsuperuser
-```
 
----
-
-## Run Development Server
-
-```bash
 python manage.py runserver
 ```
 
@@ -208,80 +180,76 @@ http://127.0.0.1:8000/
 
 ---
 
-# 🎯 Key Features Implemented
+## 🌟 Project Highlights
 
-- Django Project Setup
-- Database Design
-- Django Admin Customization
-- Dynamic Homepage
-- Featured Categories
-- Latest Glossary Terms
-- Category List
-- Category Detail
-- Glossary List
-- Glossary Detail
-- About Page
-- Responsive Navigation
-- Responsive UI
-- Bootstrap Components
+- Django MVT Architecture
+- Responsive Bootstrap UI
+- Reusable Templates
+- Django ORM Integration
+- REST API Support
+- Custom Admin Panel
+- Organized Learning Experience
 
 ---
 
-# 📈 Future Enhancements
-
-- Global Search
-- Category Filters
-- Difficulty Filters
-- Dark Mode
-- User Authentication
-- Bookmarks
-- Related Terms
-- Pagination
-- Recently Viewed Terms
-- Daily Tech Word
-- Quiz Module
-- Flashcards
-- REST API
-- PostgreSQL Support
-- Docker Deployment
-
----
-
-# 🎓 Learning Outcomes
-
-This project demonstrates practical experience with:
+## 🎯 Skills Demonstrated
 
 - Django Project Structure
-- Django Models
-- Django ORM
-- Django Templates
+- Django Models & ORM
 - URL Routing
-- Django Admin
-- Bootstrap UI Development
+- Template Inheritance
+- Bootstrap Integration
 - Responsive Web Design
-- CRUD-Based Data Management
+- REST API Development
 - Git & GitHub Workflow
 
 ---
 
-# 👨‍💻 Author
+## 📌 Project Status
+
+- ✅ Completed
+- 🚀 Production Ready
+- 🔄 Open for Improvements
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome. Feel free to
+fork the repository and submit a pull request.
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, please consider giving it a **⭐
+Star** on GitHub.
+
+---
+
+## 👨‍💻 Author
 
 **Charan Teja Epuri**
 
 Aspiring Python Full Stack Developer
 
-- Portfolio(Django): [Link](https://portfolio-site-django.onrender.com)
+Connect & Follow
 
 - GitHub: [Profile](https://github.com/charanepuri)
 
-- Portfolio(React): [Link](https://charan-react-portfolio.vercel.app)
-
 - LinkedIn: [Profile](https://www.linkedin.com/in/charan-teja-972aa9231)
+
+Explore
+
+- Portfolio(Django): [Link](https://portfolio-site-django.onrender.com)
+
+- Portfolio(React): [Link](https://charan-react-portfolio.vercel.app)
 
 - Portfolio(Flask): [Link](https://flask-developer-dashboard-portfolio.onrender.com)
 
 ---
 
-# 📄 License
+## 📄 License
 
-This project is created for educational and portfolio purposes.
+This project is intended for **educational, learning, and portfolio
+purposes**.

@@ -1,16 +1,11 @@
 from django.db import models
-
+from django.utils.text import slugify
 
 class DifficultyChoices(models.TextChoices):
     BEGINNER = "Beginner", "Beginner"
     INTERMEDIATE = "Intermediate", "Intermediate"
     ADVANCED = "Advanced", "Advanced"
     
-
-from django.db import models
-from django.utils.text import slugify
-
-
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(unique=True, blank=True)

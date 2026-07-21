@@ -38,5 +38,18 @@ urlpatterns = [
         views.glossary_detail,
         name="glossary_detail"
     ),
+    
+    
+    
+    path("search/", views.search_terms, name="search_terms"),
 
 ]
+
+
+
+# ==========================================================
+# CUSTOM ERROR HANDLERS
+# ==========================================================
+
+handler404 = "glossary.views.custom_404"
+handler500 = "glossary.views.custom_500"
