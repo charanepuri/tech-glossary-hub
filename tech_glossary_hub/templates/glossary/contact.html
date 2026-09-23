@@ -1,4 +1,5 @@
 {% extends "glossary/base.html" %}
+{% load static %}
 
 {% block title %}
 Contact | Tech Glossary Hub
@@ -38,8 +39,8 @@ Contact | Tech Glossary Hub
             <div class="col-lg-5">
                 <div class="card h-100 shadow-sm border-0 rounded-4 p-4 p-md-5">
                     <div class="text-center mb-4">
-                        <div class="category-icon mx-auto mb-3" style="background: rgba(79, 70, 229, 0.12); color: #4f46e5; width: 80px; height: 80px; font-size: 2.2rem;">
-                            <i class="bi bi-person-badge"></i>
+                        <div class="profile-avatar-wrapper mb-3">
+                            <img src="{% static 'images/PP_IMG.png' %}" alt="Charan Teja Epuri" class="profile-avatar">
                         </div>
                         <h3 class="fw-bold mb-1">Charan Teja Epuri</h3>
                         <p class="text-muted mb-0">Python Full Stack Developer</p>
