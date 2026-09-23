@@ -56,6 +56,22 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a
+                        class="nav-link {% if request.resolver_match.url_name == 'versions' %}active{% endif %}"
+                        href="{% url 'versions' %}">
+                        Versions
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-2">
+                    <a
+                        class="nav-search-btn {% if request.resolver_match.url_name == 'search_terms' %}active{% endif %}"
+                        href="{% url 'search_terms' %}">
+                        <i class="bi bi-search"></i>
+                        Search
+                    </a>
+                </li>
             </ul>
 
         </div>

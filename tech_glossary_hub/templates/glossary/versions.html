@@ -1,0 +1,306 @@
+{% extends "glossary/base.html" %}
+
+{% block title %}
+Versions | Tech Glossary Hub
+{% endblock %}
+
+{% block content %}
+
+<!-- Header -->
+<section class="bg-light py-5 border-bottom">
+    <div class="container text-center">
+        <h1 class="fw-bold">
+            Project Versions
+        </h1>
+        <p class="text-muted mb-3">
+            Explore the multi-stack implementations of Tech Glossary Hub across different frontend and backend technologies.
+        </p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Versions
+                </li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Versions Cards Section -->
+<section class="py-5">
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- 1. Django Version (Main Version) -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4 position-relative overflow-hidden">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-primary px-3 py-2 fs-6">
+                                <i class="bi bi-star-fill text-warning me-1"></i> Main Version
+                            </span>
+                            <span class="badge bg-success">
+                                Live & Active
+                            </span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="category-icon" style="background: rgba(13, 110, 253, 0.12); color: #0d6efd;">
+                                <i class="bi bi-window"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-0">Django Version</h3>
+                                <small class="text-muted">Full Stack Python & Django Architecture</small>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-4">
+                            The primary version powered by Django 6, Django REST Framework, SQLite, and Bootstrap 5. Provides full-featured server-side rendering, RESTful API endpoints, robust admin dashboard, search, and pagination.
+                        </p>
+
+                        <div class="mt-auto d-flex flex-wrap gap-2 pt-3 border-top">
+                            <a href="https://tech-glossary-hub.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Live Project
+                            </a>
+                            <a href="https://github.com/charanepuri/tech-glossary-hub" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-github me-1"></i> GitHub
+                            </a>
+                            <a href="https://drive.google.com/file/d/1r-Ta72GE2tjw4qrWlLgztVnjFiAabhdE/view" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. HTML Version -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-secondary px-3 py-2 fs-6">
+                                HTML / CSS / JS
+                            </span>
+                            <span class="badge bg-success">
+                                Live
+                            </span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="category-icon" style="background: rgba(234, 88, 12, 0.12); color: #ea580c;">
+                                <i class="bi bi-filetype-html"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-0">HTML Version</h3>
+                                <small class="text-muted">Clean Static Web Implementation</small>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-4">
+                            A lightweight, responsive pure frontend version built using semantic HTML5, CSS3, vanilla JavaScript, and modern responsive layout techniques hosted directly on GitHub Pages.
+                        </p>
+
+                        <div class="mt-auto d-flex flex-wrap gap-2 pt-3 border-top">
+                            <a href="https://charanepuri.github.io/tech-glossary-hub-html/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Live Project
+                            </a>
+                            <a href="https://github.com/charanepuri/tech-glossary-hub-html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-github me-1"></i> GitHub
+                            </a>
+                            <a href="https://charanepuri.github.io/tech-glossary-hub-html/assets/TECHGLOSSARYHUBHTML.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. React Version -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-info text-dark px-3 py-2 fs-6">
+                                React Single Page App
+                            </span>
+                            <span class="badge bg-success">
+                                Live
+                            </span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="category-icon" style="background: rgba(6, 182, 212, 0.12); color: #06b6d4;">
+                                <i class="bi bi-lightning-charge"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-0">React Version</h3>
+                                <small class="text-muted">Dynamic SPA & Component Architecture</small>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-4">
+                            Interactive Single Page Application (SPA) built using React, hooks, modern state management, responsive component modularity, and deployed with zero-config on Vercel.
+                        </p>
+
+                        <div class="mt-auto d-flex flex-wrap gap-2 pt-3 border-top">
+                            <a href="https://tech-glossary-hub-react.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Live Project
+                            </a>
+                            <a href="https://github.com/charanepuri/tech-glossary-hub-react" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-github me-1"></i> GitHub
+                            </a>
+                            <a href="https://tech-glossary-hub-react.vercel.app/Tech_Glossary_Hub_React.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Angular Version -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-danger px-3 py-2 fs-6">
+                                Angular Enterprise Framework
+                            </span>
+                            <span class="badge bg-success">
+                                Live
+                            </span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="category-icon" style="background: rgba(220, 38, 38, 0.12); color: #dc2626;">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-0">Angular Version</h3>
+                                <small class="text-muted">TypeScript & Modular Architecture</small>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-4">
+                            Enterprise-grade front-end version engineered using TypeScript, Angular routing, reusable components, and dependency injection, deployed on Vercel.
+                        </p>
+
+                        <div class="mt-auto d-flex flex-wrap gap-2 pt-3 border-top">
+                            <a href="https://tech-glossary-hub-angular.vercel.app/home" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Live Project
+                            </a>
+                            <a href="https://github.com/charanepuri/tech-glossary-hub-angular" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-github me-1"></i> GitHub
+                            </a>
+                            <a href="https://tech-glossary-hub-angular.vercel.app/Tech_Glossary_Hub_Angular.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Flask Version -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-dark px-3 py-2 fs-6">
+                                Python Flask Microframework
+                            </span>
+                            <span class="badge bg-success">
+                                Live
+                            </span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="category-icon" style="background: rgba(15, 23, 42, 0.12); color: #0f172a;">
+                                <i class="bi bi-terminal"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-0">Flask Version</h3>
+                                <small class="text-muted">Lightweight Python Backend & Jinja2</small>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-4">
+                            A lightweight Python microframework implementation utilizing Flask, Jinja2 templating, and REST design patterns deployed on Render cloud platform.
+                        </p>
+
+                        <div class="mt-auto d-flex flex-wrap gap-2 pt-3 border-top">
+                            <a href="https://tech-glossary-hub-flask.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Live Project
+                            </a>
+                            <a href="https://github.com/charanepuri/tech-glossary-hub-flask" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-github me-1"></i> GitHub
+                            </a>
+                            <a href="https://tech-glossary-hub-flask.onrender.com/static/documentation/Tech_Glossary_Hub_Flask.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Full Stack Version -->
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4">
+                    <div class="card-body p-4 p-md-5 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-secondary px-3 py-2 fs-6">
+                                Decoupled Architecture
+                            </span>
+                            <span class="badge bg-warning text-dark">
+                                Coming Soon
+                            </span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="category-icon" style="background: rgba(124, 58, 237, 0.12); color: #7c3aed;">
+                                <i class="bi bi-stack"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-0">Full Stack Version</h3>
+                                <small class="text-muted">Decoupled REST API & Modern Frontend</small>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-4">
+                            Complete end-to-end full stack architecture integrating Django REST Framework with a dedicated client application, authentication, and cloud deployment.
+                        </p>
+
+                        <div class="mt-auto d-flex flex-wrap gap-2 pt-3 border-top">
+                            <button class="btn btn-outline-secondary btn-sm" disabled>
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Live Project (Coming Soon)
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm" disabled>
+                                <i class="bi bi-github me-1"></i> GitHub
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm" disabled>
+                                <i class="bi bi-file-earmark-pdf me-1"></i> Documentation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Call to action -->
+<section class="cta">
+    <div class="container text-center">
+        <h2>Explore The Glossary</h2>
+        <p>Browse through technical definitions, deep dives, code snippets, and categorized concepts.</p>
+        <a href="{% url 'glossary_list' %}" class="btn btn-light btn-lg">
+            Start Learning
+        </a>
+    </div>
+</section>
+
+{% endblock %}
+

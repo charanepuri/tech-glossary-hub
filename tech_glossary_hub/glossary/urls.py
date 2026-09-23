@@ -16,6 +16,12 @@ urlpatterns = [
     ),
 
     path(
+        "versions/",
+        views.versions,
+        name="versions"
+    ),
+
+    path(
         "categories/",
         views.category_list,
         name="category_list"

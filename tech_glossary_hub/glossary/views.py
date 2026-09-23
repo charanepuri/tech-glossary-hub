@@ -88,6 +88,10 @@ def about(request):
     return render(request, "glossary/about.html")
 
 
+def versions(request):
+    return render(request, "glossary/versions.html")
+
+
 
 def category_list(request):
     # categories = Category.objects.all()
@@ -132,17 +136,22 @@ def category_detail(request, slug):
 
 def glossary_list(request):
 
-    terms = (
+    terms_list = (
         GlossaryTerm.objects
         .select_related("category")
         .order_by("title")
     )
 
+    paginator = Paginator(terms_list, 9)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     return render(
         request,
         "glossary/glossary_list.html",
         {
-            "terms": terms
+            "terms": page_obj,
+            "total_count": terms_list.count(),
         }
     )
 
@@ -160,21 +169,12 @@ def glossary_detail(request, slug):
         .exclude(id=term.id)[:4]
     )
 
-    # featured_terms = (
-    #     GlossaryTerm.objects.select_related("category")
-    #     .filter(is_featured=True)
-    #     .exclude(id=term.id)[:4]
-    # )
-    
     featured_terms = (
-
-    GlossaryTerm.objects
-
-    .select_related("category")
-
-    .filter(is_featured=True)[:6]
-
-)
+        GlossaryTerm.objects
+        .select_related("category")
+        .filter(is_featured=True)
+        .exclude(id=term.id)[:6]
+    )
 
     previous_term = (
         GlossaryTerm.objects
