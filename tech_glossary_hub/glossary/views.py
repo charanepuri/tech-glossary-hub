@@ -92,6 +92,10 @@ def versions(request):
     return render(request, "glossary/versions.html")
 
 
+def contact(request):
+    return render(request, "glossary/contact.html")
+
+
 
 def category_list(request):
     # categories = Category.objects.all()

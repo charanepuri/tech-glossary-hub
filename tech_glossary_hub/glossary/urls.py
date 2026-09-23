@@ -22,6 +22,12 @@ urlpatterns = [
     ),
 
     path(
+        "contact/",
+        views.contact,
+        name="contact"
+    ),
+
+    path(
         "categories/",
         views.category_list,
         name="category_list"

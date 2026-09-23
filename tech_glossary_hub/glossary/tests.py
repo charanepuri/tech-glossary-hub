@@ -92,6 +92,16 @@ class PageViewsTest(TestCase):
         self.assertContains(response, "Flask Version")
         self.assertContains(response, "Full Stack Version")
 
+    def test_contact_page_status_and_content(self):
+        response = self.client.get(reverse("contact"), HTTP_HOST="127.0.0.1")
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Get in Touch")
+        self.assertContains(response, "LinkedIn")
+        self.assertContains(response, "GitHub")
+        self.assertContains(response, "Instagram")
+        self.assertContains(response, "Snapchat")
+        self.assertContains(response, "portfolio-site-django.onrender.com")
+
     def test_category_list_page(self):
         response = self.client.get(reverse("category_list"), HTTP_HOST="127.0.0.1")
         self.assertEqual(response.status_code, 200)

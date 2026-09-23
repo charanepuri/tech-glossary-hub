@@ -64,6 +64,14 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a
+                        class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
+                        href="{% url 'contact' %}">
+                        Contact
+                    </a>
+                </li>
+
                 <li class="nav-item ms-lg-2">
                     <a
                         class="nav-search-btn {% if request.resolver_match.url_name == 'search_terms' %}active{% endif %}"

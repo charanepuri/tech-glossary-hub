@@ -1,0 +1,174 @@
+{% extends "glossary/base.html" %}
+
+{% block title %}
+Contact | Tech Glossary Hub
+{% endblock %}
+
+{% block content %}
+
+<!-- Header -->
+<section class="bg-light py-5 border-bottom">
+    <div class="container text-center">
+        <h1 class="fw-bold">
+            Get in Touch
+        </h1>
+        <p class="text-muted mb-3">
+            Have questions, feedback, suggestions, or want to collaborate? Connect with me directly across the platforms below.
+        </p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Contact
+                </li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5">
+    <div class="container">
+
+        <div class="row g-5 align-items-center">
+
+            <!-- Left: Profile & Message -->
+            <div class="col-lg-5">
+                <div class="card h-100 shadow-sm border-0 rounded-4 p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <div class="category-icon mx-auto mb-3" style="background: rgba(79, 70, 229, 0.12); color: #4f46e5; width: 80px; height: 80px; font-size: 2.2rem;">
+                            <i class="bi bi-person-badge"></i>
+                        </div>
+                        <h3 class="fw-bold mb-1">Charan Teja Epuri</h3>
+                        <p class="text-muted mb-0">Python Full Stack Developer</p>
+                    </div>
+
+                    <p class="text-muted text-center mb-4">
+                        Passionate about building scalable web applications with Python, Django, React, and modern web architectures. Feel free to connect for opportunities, technical discussions, or project inquiries!
+                    </p>
+
+                    <div class="text-center">
+                        <a href="https://portfolio-site-django.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100 py-3">
+                            <i class="bi bi-window-stack me-2"></i> View Full Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Connect Cards Grid -->
+            <div class="col-lg-7">
+                <div class="row g-4">
+
+                    <!-- LinkedIn -->
+                    <div class="col-sm-6">
+                        <a href="https://www.linkedin.com/in/charan-teja-972aa9231" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 rounded-4 p-4 hover-lift">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="category-icon flex-shrink-0" style="background: rgba(10, 102, 194, 0.12); color: #0a66c2;">
+                                        <i class="bi bi-linkedin"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-1 text-dark">LinkedIn</h5>
+                                        <small class="text-muted">Professional Network</small>
+                                    </div>
+                                    <i class="bi bi-arrow-up-right ms-auto text-muted"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="col-sm-6">
+                        <a href="https://github.com/charanepuri" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 rounded-4 p-4 hover-lift">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="category-icon flex-shrink-0" style="background: rgba(15, 23, 42, 0.12); color: #0f172a;">
+                                        <i class="bi bi-github"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-1 text-dark">GitHub</h5>
+                                        <small class="text-muted">Code Repositories</small>
+                                    </div>
+                                    <i class="bi bi-arrow-up-right ms-auto text-muted"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div class="col-sm-6">
+                        <a href="https://www.instagram.com/_just_call_me_charan_tej" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 rounded-4 p-4 hover-lift">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="category-icon flex-shrink-0" style="background: rgba(225, 48, 108, 0.12); color: #e1306c;">
+                                        <i class="bi bi-instagram"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-1 text-dark">Instagram</h5>
+                                        <small class="text-muted">Social & Updates</small>
+                                    </div>
+                                    <i class="bi bi-arrow-up-right ms-auto text-muted"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Snapchat -->
+                    <div class="col-sm-6">
+                        <a href="https://www.snapchat.com/add/justcalltej2003?share_id=o3MYfXqlpYE&locale=en-IN" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <div class="card h-100 shadow-sm border-0 rounded-4 p-4 hover-lift">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="category-icon flex-shrink-0" style="background: rgba(234, 179, 8, 0.15); color: #ca8a04;">
+                                        <i class="bi bi-snapchat"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-1 text-dark">Snapchat</h5>
+                                        <small class="text-muted">Connect & Chat</small>
+                                    </div>
+                                    <i class="bi bi-arrow-up-right ms-auto text-muted"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Portfolio Direct Card -->
+                    <div class="col-12">
+                        <a href="https://portfolio-site-django.onrender.com" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <div class="card shadow-sm border-0 rounded-4 p-4 hover-lift bg-light">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="category-icon flex-shrink-0" style="background: rgba(79, 70, 229, 0.12); color: #4f46e5;">
+                                        <i class="bi bi-globe2"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-1 text-dark">Personal Portfolio Website</h5>
+                                        <small class="text-muted">portfolio-site-django.onrender.com</small>
+                                    </div>
+                                    <i class="bi bi-box-arrow-up-right ms-auto text-primary fs-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Call to action -->
+<section class="cta">
+    <div class="container text-center">
+        <h2>Explore Tech Concepts</h2>
+        <p>Enhance your technical vocabulary with simple definitions, deep explanations, and practical code examples.</p>
+        <a href="{% url 'glossary_list' %}" class="btn btn-light btn-lg">
+            Browse All Terms
+        </a>
+    </div>
+</section>
+
+{% endblock %}
+
