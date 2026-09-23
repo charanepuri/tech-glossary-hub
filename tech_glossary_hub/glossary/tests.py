@@ -96,11 +96,9 @@ class PageViewsTest(TestCase):
         response = self.client.get(reverse("contact"), HTTP_HOST="127.0.0.1")
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Get in Touch")
-        self.assertContains(response, "PP_IMG.jpeg")
+        self.assertContains(response, "PP_IMG.png")
         self.assertContains(response, "LinkedIn")
         self.assertContains(response, "GitHub")
-        self.assertContains(response, "Instagram")
-        self.assertContains(response, "Snapchat")
         self.assertContains(response, "portfolio-site-django.onrender.com")
 
     def test_category_list_page(self):

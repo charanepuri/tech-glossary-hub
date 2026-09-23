@@ -44,7 +44,7 @@ learning categories.
 
 ## ✨ Features
 
-- 📚 45+ Technical Glossary Terms
+- 📚 150+ Technical Glossary Terms
 - 📂 7 Learning Categories
 - 🔍 Search Functionality
 - 📖 Beginner-Friendly Definitions
